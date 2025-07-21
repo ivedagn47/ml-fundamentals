@@ -120,11 +120,11 @@ class PINNsTrainer:
 
         plt.figure(figsize=(7, 5))
         plt.subplot(121)
-        plt.imshow(u_true_val, cmap="viridis")
+        plt.contourf(u_true_val, cmap="viridis")
         plt.title("True u(x, y)")
         plt.colorbar()
         plt.subplot(122)
-        plt.imshow(u_pred_val, cmap="viridis")
+        plt.contourf(u_pred_val, cmap="viridis")
         plt.title("Predicted u(x, y)")
         plt.colorbar()
         plt.tight_layout()
@@ -132,7 +132,7 @@ class PINNsTrainer:
 
         plt.figure(figsize=(5, 5))
         plt.title("Point-wise Absolute Error")
-        plt.imshow(error, cmap='Reds')
+        plt.contourf(error, cmap='Reds')
         plt.colorbar()
         plt.tight_layout()
         plt.savefig(os.path.join(self.output_dir, "error_plot.png"))
